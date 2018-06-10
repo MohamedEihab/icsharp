@@ -229,7 +229,7 @@ define(function () {
                             results.selectedIndex = results.cells.length;
                         }
                         results.cells.push(c);
-                        results.string_cells.push(JSON.stringify(c.code_mirror.getValue()));
+                        results.string_cells.push(c.code_mirror.getValue());
                         results.codes.push(c.code_mirror.getValue());
                        // console.log('Code: ' + c.code_mirror.getValue()); // CONSOLE LOG
                     }
@@ -310,7 +310,8 @@ define(function () {
                     console.log('callback method!');
                     console.log(msg);
 
-                editor.intellisense.setMethods(['CompareTo(int)', 'CompareTo(Object)']);
+             //   editor.intellisense.setMethods(['CompareTo(int)', 'CompareTo(Object)']);
+                    editor.intellisense.setDeclarations(msg.content.matches);
 
                //     editor.intellisense.setMethods(msg.content.matches);
 
